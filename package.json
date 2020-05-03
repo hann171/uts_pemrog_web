@@ -1,0 +1,23 @@
+{
+  "name": "bengkel",
+  "version": "1.0.0",
+  "description": "aplikasi rest api bengkel",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hann171/uts_pemrog_web.git"
+  },
+  "keywords": [
+    "rest",
+    "bengkel"
+  ],
+  "author": "Hengky",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hann171/uts_pemrog_web/issues"
+  },
+  "homepage": "https://github.com/hann171/uts_pemrog_web#readme"
+}
