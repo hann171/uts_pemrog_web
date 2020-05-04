@@ -50,4 +50,8 @@ module.exports = function(app){
         .delete(json.hapusLevel);
     app.route('/hapus/servis')
         .delete(json.hapusServis);
+
+    //VIEW GROUPS
+    app.route('/tampil/group')
+        .get(json.tampilGroupServis);
 }
