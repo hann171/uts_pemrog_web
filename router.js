@@ -19,4 +19,7 @@ module.exports = function(app){
 
     app.route('/tambah/montir')
         .post(json.tambahMontir);
+
+    app.route('/ubah/montir')
+        .post(json.ubahMontir);
 }
