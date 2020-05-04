@@ -7,4 +7,13 @@ module.exports = function(app){
 
     app.route('/montir')
         .get(json.tampilMontir);
+    
+    app.route('/montir/:id')
+        .get(json.tampilMontirID);
+
+    app.route('/sparepart')
+        .get(json.tampilSparepart);
+    
+    app.route('/sparepart/:id')
+        .get(json.tampilSparepartID);
 }
