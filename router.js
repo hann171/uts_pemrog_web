@@ -32,4 +32,12 @@ module.exports = function(app){
     //UPDATE
     app.route('/ubah/montir')
         .post(json.ubahMontir);
+    app.route('/ubah/sparepart')
+        .post(json.ubahSparepart);
+    app.route('/ubah/level')
+        .post(json.ubahLevel);
+    app.route('/ubah/user')
+        .post(json.ubahUser);
+    app.route('/ubah/servis')
+        .post(json.ubahServis);
 }
