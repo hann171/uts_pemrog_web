@@ -16,4 +16,7 @@ module.exports = function(app){
     
     app.route('/sparepart/:id')
         .get(json.tampilSparepartID);
+
+    app.route('/tambah/montir')
+        .post(json.tambahMontir);
 }

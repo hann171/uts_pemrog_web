@@ -52,3 +52,19 @@ exports.tampilSparepartID = function(req,res){
         }
     });
 };
+
+//Add Montir
+exports.tambahMontir = function(req,res){
+    var nama_montir = req.body.nama_montir;
+    var harga_perjam = req.body.harga_perjam;
+
+    connection.query('INSERT INTO t_montir (nama_montir,harga_perjam) VALUES (?,?)',
+    [nama_montir,harga_perjam],
+    function(error,rows,fields){
+        if(error){
+            console.log(error);
+        }else{
+            response.ok("Data telah diinput ke dalam Database", res);
+        }
+    });
+};
