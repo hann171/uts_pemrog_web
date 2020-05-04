@@ -4,4 +4,7 @@ module.exports = function(app){
 
     app.route('/')
         .get(json.index);
+
+    app.route('/montir')
+        .get(json.tampilMontir);
 }
