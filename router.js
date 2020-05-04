@@ -5,15 +5,13 @@ module.exports = function(app){
     app.route('/')
         .get(json.index);
 
+    //VIEWS
     app.route('/montir')
         .get(json.tampilMontir);
-    
     app.route('/montir/:id')
         .get(json.tampilMontirID);
-
     app.route('/sparepart')
         .get(json.tampilSparepart);
-    
     app.route('/sparepart/:id')
         .get(json.tampilSparepartID);
 
@@ -31,13 +29,25 @@ module.exports = function(app){
 
     //UPDATE
     app.route('/ubah/montir')
-        .post(json.ubahMontir);
+        .put(json.ubahMontir);
     app.route('/ubah/sparepart')
-        .post(json.ubahSparepart);
+        .put(json.ubahSparepart);
     app.route('/ubah/level')
-        .post(json.ubahLevel);
+        .put(json.ubahLevel);
     app.route('/ubah/user')
-        .post(json.ubahUser);
+        .put(json.ubahUser);
     app.route('/ubah/servis')
-        .post(json.ubahServis);
+        .put(json.ubahServis);
+
+    //DELETE
+    app.route('/hapus/montir')
+        .delete(json.hapusMontir);
+    app.route('/hapus/sparepart')
+        .delete(json.hapusSparepart);
+    app.route('/hapus/user')
+        .delete(json.hapusUser);
+    app.route('/hapus/level')
+        .delete(json.hapusLevel);
+    app.route('/hapus/servis')
+        .delete(json.hapusServis);
 }

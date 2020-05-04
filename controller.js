@@ -227,3 +227,68 @@ exports.ubahServis = function(req,res){
         }
     });
 };
+
+//hapus Montir
+exports.hapusMontir = function(req,res){
+    var id = req.body.id_montir;
+    connection.query('DELETE FROM t_montir WHERE id_montir=?',[id],
+    function(error,rows,fields){
+        if(error){
+            console.log(error);
+        }else{
+            response.ok("Data Montir telah di hapus", res);
+        }
+    });
+}
+
+//hapus Sparepart
+exports.hapusSparepart = function(req,res){
+    var id = req.body.id_sparepart;
+    connection.query('DELETE FROM t_sparepart WHERE id_sparepart=?',[id],
+    function(error,rows,fields){
+        if(error){
+            console.log(error);
+        }else{
+            response.ok("Data Sparepart telah di hapus", res);
+        }
+    });
+}
+
+//hapus Level
+exports.hapusLevel = function(req,res){
+    var id = req.body.id_level;
+    connection.query('DELETE FROM t_level WHERE id_level=?',[id],
+    function(error,rows,fields){
+        if(error){
+            console.log(error);
+        }else{
+            response.ok("Data Level telah di hapus", res);
+        }
+    });
+}
+
+//hapus User
+exports.hapusUser= function(req,res){
+    var id = req.body.id_level;
+    connection.query('DELETE FROM t_user WHERE id_user=?',[id],
+    function(error,rows,fields){
+        if(error){
+            console.log(error);
+        }else{
+            response.ok("Data User telah di hapus", res);
+        }
+    });
+}
+
+//hapus Servis
+exports.hapusServis= function(req,res){
+    var id = req.body.id_servis;
+    connection.query('DELETE FROM t_servis WHERE id_servis=?',[id],
+    function(error,rows,fields){
+        if(error){
+            console.log(error);
+        }else{
+            response.ok("Data Servis telah di hapus", res);
+        }
+    });
+}
