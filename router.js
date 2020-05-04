@@ -17,9 +17,19 @@ module.exports = function(app){
     app.route('/sparepart/:id')
         .get(json.tampilSparepartID);
 
+    //ADD
     app.route('/tambah/montir')
         .post(json.tambahMontir);
+    app.route('/tambah/sparepart')
+        .post(json.tambahSparepart);
+    app.route('/tambah/level')
+        .post(json.tambahLevel);
+    app.route('/tambah/user')
+        .post(json.tambahUser);
+    app.route('/tambah/servis')
+        .post(json.tambahServis);
 
+    //UPDATE
     app.route('/ubah/montir')
         .post(json.ubahMontir);
 }
