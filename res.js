@@ -11,9 +11,13 @@ exports.ok = function(values, res){
 
 //nested
 exports.oknested = function(values,res){
+    //akumulasi
     const hasil = values.reduce((akumulasi, item)=>{
+        //key group
         if(akumulasi[item.nama_user]){
+            //variabel group nama user
             const group = akumulasi[item.nama_user];
+            //cek isi array adalah nama sparepart
             if(Array.isArray(group.nama_sparepart)){
                 group.nama_sparepart.push(item.nama_sparepart);
             }else{
