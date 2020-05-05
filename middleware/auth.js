@@ -60,7 +60,7 @@ exports.login = function(req,rest){
         }else{
             if(rows.length == 1){
                 var token = jwt.sign({rows}, config.secret, {
-                    expiresIn: 1440
+                    expiresIn: 300
                 });
                 id_user = rows[0].id_user;
                 var data = {

@@ -9,10 +9,9 @@ router.post('/user/register', auth.registrasi);
 router.post('/user/login', auth.login);
 
 //alamat halaman otorisasi
-
 //Pelanggan
-router.get('/user/pelanggan/view/servis', verifikasi.verifPelanggan(), con.tampilGroupServis);
-router.post('/user/pelanggan/input/servis', verifikasi.verifPelanggan(), con.tambahServis);
+router.get('/user/pelanggan/view/servis', verifikasi.verifikasiPelanggan(), con.tampilGroupServis);
+router.post('/user/pelanggan/input/servis', verifikasi.verifikasiPelanggan(), con.tambahServis);
 
 //Admin
 router.post('/user/admin/input/montir', verifikasi.verifikasiAdmin(), con.tambahMontir);
