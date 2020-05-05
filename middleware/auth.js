@@ -92,3 +92,14 @@ exports.login = function(req,rest){
         }
     });
 }
+
+exports.halamanPelanggan = function(req,res){
+    connection.query("SELECT t_user.nama_user, t_servis.tgl_servis, t_montir.nama_montir, t_sparepart.nama_sparepart, t_sparepart.harga_sparepart, t_servis.jumlah_sparepart, (t_montir.harga_perjam + t_servis.jumlah_sparepart*t_sparepart.harga_sparepart) AS Harga_total FROM t_servis JOIN t_sparepart JOIN t_montir JOIN t_user WHERE t_servis.id_sparepart = t_sparepart.id_sparepart AND t_servis.id_montir = t_montir.id_montir AND t_servis.id_user = t_user.id_user ORDER BY t_user.id_user",
+    function(error,rows,fields){
+        if(error){
+            console.log(error);
+        }else{
+            response.oknested(rows, res);
+        }
+    });
+}
