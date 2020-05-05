@@ -16,7 +16,7 @@ module.exports = function(app){
         .get(json.tampilSparepartID);
 
     //ADD
-    app.route('/tambah/montir')
+    /*app.route('/tambah/montir')
         .post(json.tambahMontir);
     app.route('/tambah/sparepart')
         .post(json.tambahSparepart);
@@ -53,5 +53,5 @@ module.exports = function(app){
 
     //VIEW GROUPS
     app.route('/tampil/group')
-        .get(json.tampilGroupServis);
+        .get(json.tampilGroupServis);*/
 }
