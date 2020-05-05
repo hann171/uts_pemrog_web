@@ -12,11 +12,11 @@ exports.ok = function(values, res){
 //nested
 exports.oknested = function(values,res){
     //akumulasi
-    const hasil = values.reduce((akumulasi, item)=>{
+    const hasil = values.reduce((groupBy, item)=>{
         //key group
-        if(akumulasi[item.nama_user]){
+        if(groupBy[item.nama_user]){
             //variabel group nama user
-            const group = akumulasi[item.nama_user];
+            const group = groupBy[item.nama_user];
             //cek isi array adalah nama sparepart
             if(Array.isArray(group.nama_sparepart)){
                 group.nama_sparepart.push(item.nama_sparepart);
@@ -24,10 +24,10 @@ exports.oknested = function(values,res){
                 group.nama_sparepart = [group.nama_sparepart, item.nama_sparepart];
             }
         }else{
-            akumulasi[item.nama_user] = item;
+            groupBy[item.nama_user] = item;
         }
-        return akumulasi;
-    },{});
+        return groupBy;
+    }, {});
 
     var data = {
         'status':200,
