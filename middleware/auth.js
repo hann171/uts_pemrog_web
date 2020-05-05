@@ -41,3 +41,54 @@ exports.registrasi = function(req,res){
         }
     });
 }
+
+//controller login
+exports.login = function(req,rest){
+    var post = {
+        email: req.body.email,
+        password: req.body.password
+    }
+
+    var query = "SELECT * FROM ?? WHERE ??=? AND ??=?";
+    var table = ["t_user","email",post.email,"password",md5(post.password)];
+
+    query = mysql.format(query,table);
+     
+    connection.query(query, function(error,rows){
+        if(error){
+            console.log(error);
+        }else{
+            if(rows.length == 1){
+                var token = jwt.sign({rows}, config.secret, {
+                    expiresIn: 1440
+                });
+                id_user = rows[0].id_user;
+                var data = {
+                    id_user: id_user,
+                    access_token: token,
+                    ip_address: ip.address()
+                }
+
+                var query = "INSERT INTO ?? SET ?";
+                var table = ["t_akses_token"];
+
+                query = mysql.format(query,table);
+                
+                connection.query(query,data,function(error,rows){
+                    if(error){
+                        console.log(error);
+                    }else{
+                        rest.json({
+                            success: true,
+                            message: 'Token JWT Generated!',
+                            token:token,
+                            currUser: data.id_user
+                        });
+                    }
+                });
+            }else{
+                 rest.json({"Error": true, "Message":"Email atau Password salah!"});
+            }
+        }
+    });
+}

@@ -5,7 +5,7 @@ var router = express.Router();
 
 //daftar menu regis
 router.post('/user/register', auth.registrasi);
-//router.post('/api/v1/login', auth.login);
+router.post('/user/login', auth.login);
 
 //alamat halaman otorisasi
 //router.get('/api/v1/rahasia', verifikasi(), auth.halamanrahasia);
