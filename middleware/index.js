@@ -8,6 +8,7 @@ router.post('/user/register', auth.registrasi);
 router.post('/user/login', auth.login);
 
 //alamat halaman otorisasi
-router.get('/user/rahasia', verifikasi(), auth.halamanPelanggan);
+router.get('/user/pelanggan/view/servis', verifikasi(), auth.ViewServis);
+router.get('/user/pelanggan/input/servis', verifikasi(), auth.InputServis);
 
 module.exports = router;
