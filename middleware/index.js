@@ -32,4 +32,5 @@ router.delete('/user/admin/hapus/sparepart', verifikasi.verifikasiAdmin(), con.h
 router.delete('/user/admin/hapus/servis', verifikasi.verifikasiAdmin(), con.hapusServis);
 router.delete('/user/admin/hapus/level', verifikasi.verifikasiAdmin(), con.hapusLevel);
 
+router.get('/user/admin/view/servis', verifikasi.verifikasiAdmin(), con.tampilGroupServis);
 module.exports = router;
